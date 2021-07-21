@@ -35,5 +35,31 @@ public class EmployeePayrollImpl {
             new EmployeePayrollFileIOService().writeData(employeePayrollDataList);
         }
     }
+    public void printData(IOService ioService)
+    {
+        if (ioService.equals(IOService.FILE_IO))
+        {
+            new EmployeePayrollImpl(employeePayrollDataList).printData(ioService);
+        }
+    }
+    
+    public long countEntries(IOService ioService)
+    {
+        if (ioService.equals(IOService.FILE_IO))
+        {
+            return new EmployeePayrollImpl(employeePayrollDataList).countEntries(ioService);
+        }
+        return 0;
+    }
+
+    public long readEmployeePayrollData(IOService ioService)
+    {
+        if (ioService.equals(IOService.FILE_IO))
+        {
+            this.employeePayrollDataList = new EmployeePayrollFileIOService().readData();
+            return employeePayrollDataList.size();
+        }
+        return 0;
+    }
 	
 }
