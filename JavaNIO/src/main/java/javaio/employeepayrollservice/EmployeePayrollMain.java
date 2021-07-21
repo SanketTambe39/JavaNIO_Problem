@@ -3,6 +3,8 @@ package javaio.employeepayrollservice;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import javaio.employeepayrollservice.EmployeePayrollImpl.IOService;
+
 public class EmployeePayrollMain {
 
 	public static void main(String[] args)
@@ -11,6 +13,5 @@ public class EmployeePayrollMain {
         EmployeePayrollImpl employeePayrollImpl = new EmployeePayrollImpl(employeePayrollDataList);
         Scanner consoleInputReader = new Scanner(System.in);
         employeePayrollImpl.readEmployeePayrollData(consoleInputReader);
-        employeePayrollImpl.writeEmployeePayrollData();
     }
 }

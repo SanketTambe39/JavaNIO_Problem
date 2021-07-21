@@ -13,6 +13,7 @@ public class Java8WatchServiceExample {
     private static final WatchEvent.Modifier ENTRY_DELETE = null;
     private static final WatchEvent.Modifier ENTRY_MODIFY = null;
     private final WatchService watcher;
+    private String Kind;
     private final Map<WatchKey, Path> dirWatchers;
 
     //Creates a watchService and registers the given directory
@@ -75,7 +76,7 @@ public class Java8WatchServiceExample {
                 System.out.format("%s: %s\n", event.kind().name(), child); //print out event
 
                 //if directory is created, then register it and its sub-directories
-                if (ENTRY_CREATE == ENTRY_CREATE)
+                if (Kind.equals(ENTRY_CREATE))
                 {
                     try
                     {
